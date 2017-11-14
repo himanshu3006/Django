@@ -1,0 +1,37 @@
+
+CHANGELOG
+=============
+
+
+
+Added a column the install commands::
+
+    ALTER TABLE djintegration_repository ADD COLUMN virtual_env_type varchar(16) default "vs";
+
+Added a column the install commands::
+
+    ALTER TABLE djintegration_repository ADD COLUMN install_command text default "";
+
+Added a column for overrding email notifications::
+
+    ALTER TABLE djintegration_repository ADD COLUMN emails text NOT NULL default "";
+
+Added a column for state on the test report::
+
+    ALTER TABLE djintegration_testreport ADD COLUMN state varchar(10) NOT NULL DEFAULT "pass";
+
+Added a column the install output::
+
+    ALTER TABLE djintegration_testreport ADD COLUMN install text default "";
+
+Added a column for caching the state of the repo::
+
+    ALTER TABLE djintegration_repository ADD COLUMN state VARCHAR(10) DEFAULT "pass";
+
+Added a column for commit author::
+
+    ALTER TABLE "djintegration_testreport" ADD COLUMN "author" varchar(100) NOT NULL DEFAULT "";
+
+Added a column for being language agnostic::
+
+    ALTER TABLE "djintegration_repository" ADD COLUMN "test_command" text;
